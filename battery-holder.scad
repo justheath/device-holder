@@ -7,9 +7,6 @@ include <screw_holes.scad>
 // [width, length, height]
 deviceDimensions = [79, 166, 21];
 
-// Draw a cube to replicate the device we're making this for
-testFit = false;
-
 // we don't want it too tight
 tolerance = 1.5;
 
@@ -39,7 +36,10 @@ holeY =(innerY / sideHoles) * 0.25;
 slots = 5;
 
 // Add a screw hole in the bottom center?
-addHole = true;
+addHole = 1;// [1:true, 0: false]
+
+// Draw a cube to replicate the device we're making this for
+testFit = 0; // [1:true, 0: false]
 
 module shell() {
     difference() {
